@@ -1,0 +1,15 @@
+{% extends "layout/basic.html" %}
+
+{% load bootstrap4 %}
+
+{% block title %} Правка личных данных {% endblock %}
+
+{% block content %}
+<h2>Правка личных данных {{ user.username }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstarp_form form layout ='horizontal' %}
+        {% buttons sumbit='Сохранить' %}{% endbuttons %}
+    </form>
+
+{% endblock %}
